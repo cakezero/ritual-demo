@@ -1,13 +1,13 @@
 import { Spinner } from "../ts/icons";
 import toast, { Toaster } from "react-hot-toast";
 import { useState } from "react"
-// import { sendAuthEmail } from "../magic/sendAuthEmail"
-import { getMagicClient } from "../magic/magicClient";
+import { sendAuthEmail } from "../magic/sendAuthEmail"
+// import { getMagicClient } from "../magic/magicClient";
 
 const Home = () => {
   const [submit, setSubmit] = useState<boolean>(false);
 	const [email, setEmail] = useState<string | undefined>("");
-	const magic = getMagicClient()
+	// const magic = getMagicClient()
 
 	const sendEmail = async () => {
 		try {
@@ -17,12 +17,12 @@ const Home = () => {
 			setSubmit(true);
 			console.log("hit")
 
-			const send = await magic.auth.loginWithEmailOTP({ email })
+			// const send = await magic.auth.loginWithEmailOTP({ email })
 
-			console.log(`send: ${send}`)
+			// console.log(`send: ${send}`)
 
-			// const acct = await sendAuthEmail(email);
-			// console.log({acct});
+			const acct = await sendAuthEmail(email);
+			console.log({acct});
 
 			toast.success("User auth successful");
 			setSubmit(false);

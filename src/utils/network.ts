@@ -17,7 +17,7 @@ const networkConfig: networkType = {
 		explorerUrl: "sepolia.basescan.org",
 	},
 	mainnet: {
-		rpcUrl: `https://base-mainnet.g.alchemy.com/v2/${ALCHEMY_API_KEY}`,
+		rpcUrl: `https://polygon-mainnet.g.alchemy.com/v2/${ALCHEMY_API_KEY}`,
 		chainId: 8453,
 		explorerUrl: "basescan.org",
 	},

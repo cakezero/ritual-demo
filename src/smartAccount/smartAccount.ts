@@ -1,8 +1,8 @@
 import { createModularAccountAlchemyClient } from "@alchemy/aa-alchemy";
 import { getWalletClient } from "../viem/viemClient";
 import {
-  base,
-  baseSepolia,
+	polygon,
+	polygonAmoy,
 	SmartAccountClient,
 	WalletClientSigner,
 } from "@alchemy/aa-core";
@@ -11,9 +11,9 @@ import {
 	ALCHEMY_API_KEY,
 	ALCHEMY_GAS_POLICY_ID,
 } from "../utils/env";
-import { getChain } from "../viem/viemChain";
+// import { getChain } from "../viem/viemChain";
 
-const chain = ENVIRONMENT === "mainnet" ? base : baseSepolia;
+const chain = ENVIRONMENT === "mainnet" ? polygon : polygonAmoy;
 
 let smartAccount: SmartAccountClient | undefined = undefined;
 

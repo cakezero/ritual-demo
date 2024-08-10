@@ -1,5 +1,6 @@
 import { Address } from "viem";
 import { getSmartAccount } from "./smartAccount";
+import { UserOperationCallData } from "@alchemy/aa-core";
 
 const sendUserOperation = async (
 	operationData: {
@@ -14,6 +15,15 @@ const sendUserOperation = async (
 	if (!smartAccountClient.account) {
 		throw new Error("SmartAccountClient account missing");
 	}
+
+	const uoStruct: UserOperationCallData = {
+		target: target,
+		data: calldata
+	};
+
+	const sim = await smartAccountClient.simulateUserOperation({
+		uo: uoStruct
+	})
 
 	const userOperation = await smartAccountClient.sendUserOperation({
 		uo: {

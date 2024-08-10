@@ -16,6 +16,7 @@ const getWalletClient = () => {
 	const magicProvider = getMagicClient().rpcProvider;
 
 	walletClient = createWalletClient({
+		account: "0x8B52c1eF822F57248aA4f14edB11a0CfA20007b6",
 		chain: getChain(),
 		transport: custom(magicProvider),
 	});
